@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+
+:root {
+    --clrf: rgb(255, 255, 255);
+    --bgall: #5a1313;
+    --bgcaixa: rgb(255, 255, 255,0.2);
+    --btncr: #333;
+    --rgba: rgba(0, 0, 0, 0.15);
+    --bgativo: rgb(0, 0, 0);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
+
+}
+
+.header {
+    position: absolute;
+    display: flex;
+    top: 0;    
+}
+
+img {
+    width: 200px;
+    transition: 1s;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bgall) ;
+    transition: 1s;
+}
+
+body.ativo {
+    background: var(--bgativo);
+}
+
+.container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 20px;
+}
+
+
+.fundoazul {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bgcaixa);
+    box-shadow: 0 5px 45px var(--rgba);
+}
+
+.fundoazul .caixa {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fundoazul .caixa h2 {
+    color: var(--clrf);
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.fundoazul .caixa button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background: var(--clrf);
+    color: var(--btncr);
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px 2px 10px 2px;
+}
+
+.formCx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--clrf);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 45px var(--rgba);
+    transition: 1s ease-in-out;
+    overflow: hidden;
+    border-radius: 0 15px 0 50px;
+}
+
+.formCx.ativo {
+    left: 50%;
+}
+
+.formCx .form{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 50px;
+    transition: 1s;
+}
+
+.formCx.ativo .entrarForm {
+    left: -100%;
+
+}
+
+.formCx .entrarForm {
+    transition-delay: 0.25s;
+}
+
+.formCx .cadastrarForm {
+    left: 100%;
+    transition-delay: 0.25s;
+}
+
+.formCx.ativo .cadastrarForm{
+    left: 0;
+}
+
+.formCx .form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formCx .form form h3 {
+    font-size: 1.5rem;
+    color: var(--btncr);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.formCx .form form input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid var(--btncr);
+    border-radius: 10px 0 10px 0;
+}
+
+.formCx .form form input[type="submit"]{
+    background: var(--bgall) ;
+    border: none;
+    color: var(--clrf);
+    max-width: 100px;
+    cursor: pointer;
+}
+
+.formCx.ativo .cadastrarForm input[type="submit"]{
+    background: var(--btncr);
+}
+
+.formCx .form form .esqueceu {
+    color: var(--btncr);
+    text-decoration: none;
+}
+
+@media (max-width: 991px) {
+    .container{
+        max-width: 400px;
+        height: 650px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container .fundoazul {
+        top: 0;
+        height: 100%;
+    }
+    .formCx{
+       width: 100%; 
+       height: 500px;
+       top: 0;
+       box-shadow: none;
+    }
+    .fundoazul .caixa {
+        position: absolute;
+        width: 100%; 
+        height: 150px;
+        bottom: 0;
+     }
+     .caixa.entrar{
+        top: 0;
+     }
+     .formCx.ativo {
+        left: 0;
+        top: 150px;
+     }
+     img{
+        width: 100px;
+     }
+}
